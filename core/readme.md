@@ -1,9 +1,9 @@
 # 섹션2. 스프링 핵심 원리 이해1 - 예제 만들기
 
 생성일: 2024년 4월 6일 오후 9:03
-태그: 하나로
+태그: basic
 
-# main
+# 💚main
 
 ### package hello.core.member
 
@@ -17,22 +17,34 @@
     - 회원 서비스 인터페이스 : MemberService
     - 회원 서비스 구현체 : class MemberServiceImpl
 
+### package hello.core.discount
+
+- 할인 정책 인터페이스 : interface DiscountPolicy
+- 정액 할인 정책 구현체 : class FixDiscountPolicy
+
+### package hello.core.order
+
+- 주문 엔티티 : Order
+- 주문 서비스
+    - 주문 서비스 인터페이스 : interface OrderService
+    - 주문 서비스 구현체 : class OrderServiceImpl
+
 ### package hello.core
 
-- 회원 도메인
-    - 회원 가입 메인 : MemberApp
+- 회원 가입 : MemberApp
+- 주문과 할인 정책 시행 : OrderApp
 
-# test
+# 💚test
 
 - main에서 애플리케이션 로직으로 테스트 하는 것은 좋은 방법이 아니다.
 - test에서 JUnit 테스트를 이용하는 것이 좋다.
 
 ### package hello.core
 
-- 회원 도메인
-    - 회원 가입 테스트
+- MemberServiceTest
+- OrderServiceTest
 
-# 알게된 것
+# 💚알게된 것
 
 - hashmap
     - put
@@ -40,9 +52,9 @@
 - final
     - 해당 필드를 초기화한 후에는 다른 객체로 변경할 수 없다.
 - assertions
-    - assertThat
-    - isEqualTo
+    - assertThat()
+    - isEqualTo()
 
-# 문제점
+# 💚문제점
 
 - 의존관계가 인터페이스 뿐만 아니라 구현까지 모두 의존하는 문제점이 있다.
